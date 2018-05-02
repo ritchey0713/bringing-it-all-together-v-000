@@ -57,7 +57,9 @@ class Dog
   
   def self.find_or_create_by(dog_info)
     sql = <<-SQL
-    
+    SELECT * 
+    FROM dogs 
+    WHERE 
   
     def update 
     sql = <<-SQL
