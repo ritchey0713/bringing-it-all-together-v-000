@@ -65,7 +65,7 @@ class Dog
     if row.empty?
       new_dog = self.create(name:name , breed:breed)
     else 
-      
+      new_dog = self.new_from_db()
   
     def update 
     sql = <<-SQL
