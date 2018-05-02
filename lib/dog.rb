@@ -62,7 +62,8 @@ class Dog
     WHERE name = ? AND breed = ?
     SQL
     row = DB[:conn].execute(sql, name, breed)
-    if 
+    if row.empty?
+      
   
     def update 
     sql = <<-SQL
