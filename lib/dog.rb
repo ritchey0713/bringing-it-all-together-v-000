@@ -67,6 +67,7 @@ class Dog
     else 
       new_dog = self.new_from_db(row.first)
     end
+    new_dog
   end 
   
     def update 
