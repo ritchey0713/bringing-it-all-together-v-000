@@ -66,6 +66,8 @@ class Dog
   end
 end 
 
-def self.create 
+def self.create(dog_info)
+  self.new(dog_info)
+end 
 
 end 
