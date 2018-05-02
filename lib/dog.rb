@@ -61,7 +61,7 @@ class Dog
     FROM dogs 
     WHERE name = ? AND breed = ?
     SQL
-    
+    row = DB[:conn].execute(sql, name,)
   
     def update 
     sql = <<-SQL
