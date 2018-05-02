@@ -59,7 +59,8 @@ class Dog
     sql = <<-SQL
     SELECT * 
     FROM dogs 
-    WHERE 
+    WHERE name = ? AND breed = ?
+    
   
     def update 
     sql = <<-SQL
