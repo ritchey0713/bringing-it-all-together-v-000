@@ -38,6 +38,7 @@ class Dog
     WHERE name = ? 
     LIMIT 1 
     SQL
+   
     DB[:conn].execute(sql, name).collect do |row|
       self.new_from_db(row)
     end.first 
@@ -50,6 +51,7 @@ class Dog
     WHERE id = ? 
     LIMIT 1 
     SQL
+   
     DB[:conn].execute(sql, id).collect do |row|
       self.new_from_db(row)
     end.first 
@@ -76,6 +78,7 @@ class Dog
     SET name = ?, breed = ?
     WHERE id = ? 
     SQL
+    
     DB[:conn].execute(sql, self.name, self.breed, self.id)
     @id = DB[:conn].execute("SELECT last_insert_rowid() FROM dogs")[0][0]
   end 
@@ -88,6 +91,7 @@ class Dog
       INSERT INTO dogs (name, breed)
       VALUES (?,?)
     SQL
+    
     DB[:conn].execute(sql, self.name, self.breed)  
     @id = DB[:conn].execute("SELECT last_insert_rowid() FROM dogs")[0][0]
     self
