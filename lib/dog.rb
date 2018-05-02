@@ -63,7 +63,7 @@ class Dog
     SQL
     row = DB[:conn].execute(sql, name, breed)
     if row.empty?
-      new_dog = 
+      new_dog = self.create(name:, breed:)
   
     def update 
     sql = <<-SQL
