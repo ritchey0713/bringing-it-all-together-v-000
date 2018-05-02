@@ -43,6 +43,18 @@ class Dog
     end.first 
   end 
   
+  def self.find_by_id 
+    sql = <<-SQL
+    SELECT * 
+    FROM dogs 
+    WHERE id = ? 
+    LIMIT 1 
+    SQL
+    DB[:conn].execute(sql, id).collect do |row|
+      self.new_from_db(row)
+    end.first 
+  end 
+  
     def update 
     sql = <<-SQL
     UPDATE dogs
